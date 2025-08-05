@@ -5,7 +5,7 @@ import { test, Browser, Page, expect } from '@playwright/test';
   let browser: Browser;
   let page: Page;
 
-  test.describe('Navegacion a www.freerangetesters.com', () => {
+  test.describe('Navegacion en www.freerangetesters.com', () => {
     const sections= [
       {nombre: 'Cursos', url: '/cursos', tituloEsperado: 'Cursos'},
       {nombre: 'Mentorías', url: '/mentoria-1-1-con-pato', tituloEsperado: 'Mentoría personalizada de avance de carrera para testers de software'},
