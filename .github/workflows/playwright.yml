@@ -25,3 +25,11 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Trigger E2E tests
+      if: github.event_name == 'push'  # Solo en push, no en PR
+      uses: peter-evans/repository-dispatch@v3
+      with:
+        token: ${{ secrets.DISPATCH_TOKEN }}
+        repository: 'walter-scv/cc-e2e-testcicd'  # CAMBIAR por tu repo real
+        event-type: run-e2e-tests
+        
